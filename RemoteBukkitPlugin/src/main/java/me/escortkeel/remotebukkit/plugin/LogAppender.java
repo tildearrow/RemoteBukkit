@@ -48,6 +48,6 @@ public class LogAppender extends AbstractAppender {
     @Override
     public void append(LogEvent event) {
 	plugin.broadcast(new SimpleDateFormat("hh:mm a").format(
-		new Date(event.getMillis())) + " [" + event.getLevel().toString() + "] " + event.getMessage().getFormattedMessage());
+		new Date(event.getTimeMillis())) + " [" + event.getLevel().toString() + "] " + event.getMessage().getFormattedMessage());
     }
 }
